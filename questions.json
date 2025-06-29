@@ -1,0 +1,113 @@
+{
+  "sports": [
+  {
+    "question": "Who won the FIFA World Cup 2022?",
+    "options": ["France", "Argentina", "Germany", "Brazil"],
+    "answer": "Argentina"
+  },
+  {
+    "question": "Which country has won the most Olympic gold medals?",
+    "options": ["China", "Russia", "USA", "Germany"],
+    "answer": "USA"
+  },
+  {
+    "question": "In which sport is the term 'love' used?",
+    "options": ["Football", "Tennis", "Basketball", "Cricket"],
+    "answer": "Tennis"
+  },
+  {
+    "question": "Who holds the record for the most goals in a single World Cup?",
+    "options": ["Pele", "Ronaldo", "Klose", "Messi"],
+    "answer": "Klose"
+  },
+  {
+    "question": "Which country hosted the 2016 Summer Olympics?",
+    "options": ["Brazil", "Japan", "China", "UK"],
+    "answer": "Brazil"
+  }
+],
+
+"government": [
+  {
+    "question": "Who is the current President of India (as of 2024)?",
+    "options": ["Droupadi Murmu", "Ram Nath Kovind", "Narendra Modi", "Amit Shah"],
+    "answer": "Droupadi Murmu"
+  },
+  {
+    "question": "Which article of the Indian Constitution deals with Fundamental Rights?",
+    "options": ["Article 14", "Article 21", "Article 19", "All of the above"],
+    "answer": "All of the above"
+  },
+  {
+    "question": "Which body is known as the guardian of the Indian Constitution?",
+    "options": ["President", "Parliament", "Supreme Court", "Election Commission"],
+    "answer": "Supreme Court"
+  },
+  {
+    "question": "Who appoints the Chief Minister of an Indian state?",
+    "options": ["Prime Minister", "Governor", "President", "Speaker"],
+    "answer": "Governor"
+  },
+  {
+    "question": "What is the tenure of a Rajya Sabha member?",
+    "options": ["4 years", "5 years", "6 years", "7 years"],
+    "answer": "6 years"
+  }
+],
+ "education": [
+  {
+    "question": "What does 'IQ' stand for?",
+    "options": ["Intelligent Quotient", "Intellectual Quality", "Intelligence Quotient", "Intellectual Quotient"],
+    "answer": "Intelligence Quotient"
+  },
+  {
+    "question": "Which is the largest open university in India?",
+    "options": ["IGNOU", "DU", "JNU", "AMU"],
+    "answer": "IGNOU"
+  },
+  {
+    "question": "Which education policy was introduced in India in 2020?",
+    "options": ["NEP 2020", "Right to Education", "Digital India", "Skill India"],
+    "answer": "NEP 2020"
+  },
+  {
+    "question": "What is the full form of UGC?",
+    "options": ["University Grants Commission", "United General Council", "University Grade Certification", "Unified Grant Cell"],
+    "answer": "University Grants Commission"
+  },
+  {
+    "question": "Which is the first Indian Institute of Technology (IIT)?",
+    "options": ["IIT Bombay", "IIT Delhi", "IIT Kharagpur", "IIT Kanpur"],
+    "answer": "IIT Kharagpur"
+  }
+],
+  "business": [
+  {
+    "question": "Who is the CEO of Tesla?",
+    "options": ["Elon Musk", "Tim Cook", "Jeff Bezos", "Sundar Pichai"],
+    "answer": "Elon Musk"
+  },
+  {
+    "question": "Which company owns the brand 'Instagram'?",
+    "options": ["Google", "Meta", "Apple", "Microsoft"],
+    "answer": "Meta"
+  },
+  {
+    "question": "What does IPO stand for?",
+    "options": ["Initial Price Offering", "Investment Public Order", "Initial Public Offering", "Institutional Public Option"],
+    "answer": "Initial Public Offering"
+  },
+  {
+    "question": "Which Indian company is known for launching 'Jio'?",
+    "options": ["Tata", "Reliance", "Infosys", "Wipro"],
+    "answer": "Reliance"
+  },
+  {
+    "question": "Who founded Microsoft?",
+    "options": ["Steve Jobs", "Mark Zuckerberg", "Larry Page", "Bill Gates"],
+    "answer": "Bill Gates"
+   }
+ ]
+}
+
+

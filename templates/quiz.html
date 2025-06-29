@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ category.capitalize() }} Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body data-total="{{ questions|length }}">
+    <form id="quiz-form" action="/submit" method="POST">
+        {% for q in questions %}
+        {% set display_style = '' if loop.first else 'display: none;' %}
+        <div class="question-box" id="question-{{ loop.index0 }}" style="{{ display_style }}">
+            <div class="timer" id="timer-{{ loop.index0 }}">10</div>
+            <h3>{{ q.question }}</h3>
+            {% for opt in q.options %}
+                <label>
+                    <input type="radio" name="question_{{ loop.index0 }}" value="{{ opt }}" onclick="saveAnswer({{ loop.index0 }}, '{{ q.question }}', '{{ opt }}')" required>
+                    {{ opt }}
+                </label><br>
+            {% endfor %}
+        </div>
+        {% endfor %}
+
+        <input type="hidden" name="questions" id="questions">
+        <button type="submit" id="submit-btn" style="display:none;">Submit</button>
+    </form>
+
+    <script type="application/json" id="raw-questions">
+        {{ questions|tojson|safe }}
+    </script>
+
+    <audio id="correctSound" src="{{ url_for('static', filename='sounds/correct.mp3') }}"></audio>
+    <audio id="wrongSound" src="{{ url_for('static', filename='sounds/wrong.mp3') }}"></audio>
+
+    <script>
+        const allQuestions = JSON.parse(document.getElementById("raw-questions").textContent);
+        const totalQuestions = parseInt(document.body.dataset.total);
+        let currentIndex = 0;
+        const userAnswers = {};
+        const timerDuration = 10;
+
+        function saveAnswer(index, questionText, answer) {
+            userAnswers[questionText] = answer;
+
+            const question = allQuestions.find(q => q.question === questionText);
+            if (question) {
+                if (question.answer === answer) {
+                    document.getElementById("correctSound").play();
+                } else {
+                    document.getElementById("wrongSound").play();
+                }
+            }
+
+            // Move to next question after selection
+            setTimeout(() => {
+                currentIndex++;
+                if (currentIndex < totalQuestions) {
+                    showQuestion(currentIndex);
+                    startTimer(currentIndex);
+                } else {
+                    submitQuiz();
+                }
+            }, 300);
+        }
+
+        function showQuestion(index) {
+            document.querySelectorAll('.question-box').forEach(q => q.style.display = 'none');
+            const box = document.getElementById(`question-${index}`);
+            if (box) box.style.display = 'block';
+        }
+
+        function startTimer(index) {
+            let time = timerDuration;
+            const timerEl = document.getElementById(`timer-${index}`);
+            const countdown = setInterval(() => {
+                if (timerEl) timerEl.textContent = time;
+                time--;
+                if (time < 0) {
+                    clearInterval(countdown);
+                    currentIndex++;
+                    if (currentIndex < totalQuestions) {
+                        showQuestion(currentIndex);
+                        startTimer(currentIndex);
+                    } else {
+                        submitQuiz();
+                    }
+                }
+            }, 1000);
+        }
+
+        function submitQuiz() {
+            document.getElementById('questions').value = JSON.stringify(allQuestions);
+            for (let question in userAnswers) {
+                const hidden = document.createElement("input");
+                hidden.type = "hidden";
+                hidden.name = question;
+                hidden.value = userAnswers[question];
+                document.getElementById("quiz-form").appendChild(hidden);
+            }
+            document.getElementById("quiz-form").submit();
+        }
+
+        showQuestion(0);
+        startTimer(0);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
