@@ -10,7 +10,7 @@ This is an interactive quiz web app built using **Python Flask**. Users can log 
 
 **Suryansh Dubey**  
 [![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=flat&logo=github&logoColor=white)](https://github.com/suryanshdubey20)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/suryansh-dubey)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/suryansh-dubey-6b2805330?)
 
 ---
 
